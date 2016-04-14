@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tytul:</strong>
+  <%= @spektakl.tytul %>
+</p>
+
+<p>
+  <strong>Rezyser:</strong>
+  <%= @spektakl.rezyser %>
+</p>
+
+<p>
+  <strong>Premiera:</strong>
+  <%= @spektakl.premiera %>
+</p>
+
+<%= link_to 'Edytuj', edit_spektakl_path(@spektakl), class: 'btn btn-default' %> |
+<%= link_to 'Cofnij', spektakls_path, class: 'btn btn-default' %>

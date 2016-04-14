@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tytul: MyString
+  rezyser: MyString
+  premiera: 2016-04-10 12:36:55
+
+two:
+  tytul: MyString
+  rezyser: MyString
+  premiera: 2016-04-10 12:36:55

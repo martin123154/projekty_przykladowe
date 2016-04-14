@@ -1,0 +1,55 @@
+<%- model_class = Spektakl -%>
+<div class="page-header">
+
+<h1>Lista Spektakli</h1> <%= link_to 'Dodaj nowy spektakl', new_spektakl_path, class: 'btn btn-default' %>
+
+
+</div>
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+	
+	<th><%= model_class.human_attribute_name("Tytuł") %></th>
+      <th><%= model_class.human_attribute_name("Reżyser") %></th>
+      <th><%= model_class.human_attribute_name("Premiera") %></th>
+      <th><%=t '.actions', default: t("Działania") %></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @spektakls.each do |spektakl| %>
+      <tr>
+	  
+        <td><%= spektakl.tytul %></td>
+        <td><%= spektakl.rezyser %></td>
+        <td><%= spektakl.premiera %></td>
+       <td>
+          <%= link_to spektakl_path(spektakl), class: 'btn btn-xs', title: "Pokaż spektakl" do %>
+            <%= glyph 'info-sign' %>
+          <%- end -%>
+          <%= link_to edit_spektakl_path(spektakl), class: 'btn btn-xs', title: "Edytuj spektakl" do %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+		 
+          <%= link_to spektakl_path(spektakl), method: :delete, data: { confirm: t('.confirm', default: t("Czy na pewno chcesz usunąć ten spektakl?", default: 'Czy na pewno chcesz usunąć spektakl?')) }, class: 'btn btn-xs', title: "Usuń spektakl" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+    
+       
+    
+</div>
+
+ <div class="text-center">
+        <%= will_paginate @spektakls %>
+    </div>
+
+ <div class='col-md-offset-2'>
+   
+
+
